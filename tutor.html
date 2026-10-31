@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#6d4aff">
+<link rel="manifest" href="manifest.json">
+<title>Gia sư AI</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .msg { padding: 10px 14px; margin: 8px 0; border-radius: 14px; white-space: pre-wrap; line-height: 1.5; }
+  .me { background: linear-gradient(90deg, var(--p), var(--p2)); color: #fff; margin-left: 40px; }
+  .ai { background: var(--card); border: 1px solid var(--line); margin-right: 40px; }
+  .err { color: var(--danger); }
+  details { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 10px 14px; margin-bottom: 12px; }
+  details input, details select, #subject { width: 100%; margin: 6px 0; }
+  .quick { display: flex; gap: 8px; flex-wrap: wrap; margin: 10px 0; }
+  .quick button { background: var(--card); color: var(--p); border: 1px solid var(--line); padding: 8px 12px; font-size: 14px; }
+  #send { position: sticky; bottom: 0; background: var(--bg); padding: 10px 0; display: flex; gap: 8px; }
+</style>
+</head>
+<body>
+<div id="app">
+  <a href="./">← Về trang chủ</a>
+  <h1>Gia sư AI</h1>
+  <details id="settings">
+    <summary>⚙️ Cài đặt AI</summary>
+    <p>Chọn nhà cung cấp và dán API key của bạn. Key chỉ lưu trong điện thoại này.</p>
+    <select id="provider">
+      <option value="groq">Groq</option>
+      <option value="gemini">Gemini</option>
+    </select>
+    <input id="model" placeholder="Tên model">
+    <input id="key" type="password" placeholder="Dán API key">
+    <button id="save" type="button">Lưu</button> <span id="saved"></span>
+  </details>
+  <select id="subject"></select>
+  <div class="quick">
+    <button type="button" data-p="Giải thích giúp mình bài: ">📖 Giải thích</button>
+    <button type="button" data-p="Tóm tắt giúp mình bài: ">📝 Tóm tắt</button>
+    <button type="button" data-p="Tạo 5 câu trắc nghiệm, có đáp án ở cuối, về: ">❓ Trắc nghiệm</button>
+    <button type="button" data-p="Cho mình một bài tập ôn thi vào lớp 10 về: ">🎯 Ôn thi</button>
+  </div>
+  <div id="chat"></div>
+  <form id="send">
+    <input id="q" placeholder="Hỏi gia sư..." required autocomplete="off">
+    <button>Gửi</button>
+  </form>
+</div>
+<script src="tutor.js"></script>
+</body>
+</html>

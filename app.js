@@ -46,6 +46,7 @@ function homeHtml() {
     </div>`).join("") || `<div class="empty">Chưa có môn nào. Hãy thêm môn đầu tiên!</div>`;
   return `<h1>StudyHub</h1>
     <p>⏳ Còn <b>${daysLeft()}</b> ngày đến kỳ thi vào lớp 10 (dự kiến tháng 6/2027)</p>
+    <a href="tutor.html" style="display:block;margin-bottom:12px">🤖 Gia sư AI</a>
     <form class="add" data-form="add-subject">
       <input name="name" placeholder="Tên môn học (vd: Toán)" required>
       <button>Thêm</button>

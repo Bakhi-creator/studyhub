@@ -1,5 +1,5 @@
-const CACHE = "studyhub-v1";
-const FILES = ["./", "index.html", "style.css", "app.js", "manifest.json", "icon-192.png", "icon-512.png"];
+const CACHE = "studyhub-v2";
+const FILES = ["./", "index.html", "style.css", "app.js", "manifest.json", "icon-192.png", "icon-512.png", "tutor.html", "tutor.js"];
 
 // Lần đầu: lưu sẵn các file của app vào máy
 self.addEventListener("install", e => {
