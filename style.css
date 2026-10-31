@@ -1,0 +1,39 @@
+:root { --p:#6d4aff; --p2:#3b82f6; --bg:#f6f4ff; --card:#ffffff; --text:#1f1b3a;
+        --muted:#7a7694; --line:#e6e1ff; --danger:#e11d48; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#14121f; --card:#1e1b30; --text:#ece9ff; --muted:#9b97b8;
+          --line:#322e50; --danger:#fb7185; }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text); font-family: system-ui, sans-serif; }
+#app { max-width: 520px; margin: 0 auto; padding: 16px 16px 48px; }
+h1 { margin: 8px 0 12px; font-size: 30px;
+     background: linear-gradient(90deg, var(--p), var(--p2));
+     -webkit-background-clip: text; background-clip: text; color: transparent; }
+h1 + p { display: inline-block; margin: 0 0 16px; padding: 8px 14px; background: var(--card);
+         border: 1px solid var(--line); border-radius: 999px; }
+a { color: var(--p); text-decoration: none; font-weight: 600; }
+form.add, form.lessonform { display: flex; gap: 8px; margin-bottom: 14px; flex-wrap: wrap; }
+input, select { padding: 12px; font-size: 16px; border: 1px solid var(--line);
+                border-radius: 12px; background: var(--card); color: var(--text); }
+input { flex: 1; min-width: 130px; }
+input:focus, select:focus { outline: 2px solid var(--p); }
+button { padding: 12px 16px; font-size: 15px; font-weight: 600; border: 0; border-radius: 12px;
+         color: #fff; background: linear-gradient(90deg, var(--p), var(--p2)); }
+button[data-act^="del"] { background: transparent; color: var(--danger);
+         border: 1px solid var(--line); padding: 8px 12px; font-size: 14px; font-weight: 500; }
+.item { display: flex; justify-content: space-between; align-items: center; gap: 8px;
+        padding: 10px 12px 10px 16px; margin-bottom: 10px; background: var(--card);
+        border: 1px solid var(--line); border-left: 5px solid var(--p);
+        border-radius: 14px; box-shadow: 0 2px 8px rgba(109,74,255,.08); }
+.item a { flex: 1; font-size: 18px; color: var(--text); padding: 8px 0; }
+.chapter { background: var(--card); border: 1px solid var(--line); border-radius: 16px;
+           padding: 14px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(109,74,255,.08); }
+.lesson { padding: 10px 0; border-bottom: 1px solid var(--line); }
+.lesson select { margin-top: 8px; padding: 8px 10px; font-size: 14px; }
+.row { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.video { position: relative; padding-top: 56.25%; margin-top: 10px;
+         border-radius: 12px; overflow: hidden; }
+.video iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+.empty { color: var(--muted); text-align: center; padding: 24px;
+         border: 2px dashed var(--line); border-radius: 14px; }
